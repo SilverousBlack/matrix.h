@@ -6,16 +6,16 @@ Packaged with `dimensional.h`, a library for storing/handling sizes and location
 
 ## Latest Release
 
-### A 1.0 Features
+### 1.0 Features
 
-- Internally a three-dimensional vector (std::vector) of typename "type" `(vector<vector<vector<type>>>)`.
-- Compatible to contain an any number of members with default setting of 1x1x1 space (_breadth=0, _height=0, _width=0).
+- Internally a three-dimensional vector `(std::vector)` of typename `"type"` `(vector<vector<vector<type>>>)`.
+- Compatible to contain an any number of members with default setting of `1x1x1` space `(_breadth=0, _height=0, _width=0)`.
 - Compatible to contain any type structure/class.
-- Size is internally managed by dimensional_size from `dimensional.h`.
+- Size is internally managed by `dimensional_size` from `dimensional.h`.
   
 #### Functionalities
 
-  `resize()` - resizes the matrix space the same a vector does, but the size of each row (x), column (y) and flank (z) are uniform in nature; a matrix space does not have jagged rows/columns/flanks. Default resize is a 1x1x1 space.
+  `resize()` - resizes the matrix space the same a vector does, but the size of each row `(x)`, column `(y)` and flank `(z)` are uniform in nature; a matrix space does not have jagged rows/columns/flanks. Default resize is a `1x1x1` space.
   
    `assign()` - assigns a value to a matrix member of `(z, y, x)` position. No default setting.
   
