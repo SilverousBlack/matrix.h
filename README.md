@@ -1,10 +1,36 @@
 # matrix.h
+`matrix.h` and `dimensional.h` are C++ libraries. Where `matrix.h` contains the class `matrix`, a three-dimensional `std::vector`-based class and `dimensional.h` contains the class `dimensional_size`, a class for handling three-dimensional sizes and class `dimensional_pos`, a class for handling three-dimensional positions in a space.
 
-A 3D vector-based class.
-
-Packaged with `dimensional.h`, a library for storing/handling sizes and locations/positions of objects in a three-dimensional space.
+***IMPORTANT***
+Visit `code/releases` for the latest release as well all other releases.
 
 ## Latest Release
+
+### 2.0 Features
+#### ***BIG CHANGES***
+* Placed `dimensional_pos` and `dimensional_size` under `namespace` `s_dim`
+    - This would allow you to create your own simplified vesion of the library's classes and use both simultaneously
+* Placed `matrix` under namespace `s_matrix`
+    - This would allow you to create your own simplified vesion of the library's class and use both simultaneously
+* Seperated function declarations and definitions
+*Added `*.lib` and `*.obj` files
+     - `matrix.h` and `dimensional.h` are now static libraries
+     - visit https://docs.microsoft.com/en-us/cpp/build/walkthrough-creating-and-using-a-static-library-cpp?view=vs-2019 for more information
+     - for other IDEs, `matrix.h` and `dimensional.h` can be included by respective standard means (e.g. adding them to the linker list)
+
+#### Additional Functionalities/Functionality Changes
+* `matrix::isfull()`
+  - detects if the entire matrix space is full. Boolean value, returns true if full, false if not.
+* `matrix::fill()` 
+  - fills all  blank spaces in the matrix with a certain value.
+* `matrix::remove_instance()` 
+  - clears all instances of a certain value in the matrix space.
+* `matrix::operator bool() const` 
+  - a cast to `bool` operator.
+  - similar to `matrix::isfull()`.
+* `matrix::operator size_t() const`
+  - a cast to `size_t` operator.
+  - randomly returns the breadth (`dimensional_size::get_breadth()`), height (`dimensional_size::get_height()`), width (`dimensional_size::get_width()`) or capacity (`matrix::get_capacity()`)
 
 ### 1.0 Features
 
