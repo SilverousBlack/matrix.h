@@ -13,10 +13,10 @@ namespace s_dim {
 		dimensional_size();
 		dimensional_size(size_t oz, size_t oy, size_t ox);
 		~dimensional_size();
-		size_t get_capacity();
-		size_t get_breadth();
-		size_t get_height();
-		size_t get_width();
+		size_t get_capacity() const;
+		size_t get_breadth() const;
+		size_t get_height() const;
+		size_t get_width() const;
 		void up_size(size_t z = 0, size_t y = 0, size_t x = 0);
 	private:
 		size_t absolute_x;
@@ -24,18 +24,16 @@ namespace s_dim {
 		size_t absolute_z;
 	};
 
-	template<typename type>
 	class dimensional_pos {
 	public:
-		dimensional_pos();
 		dimensional_pos(pos z = 0, pos y = 0, pos x = 0);
 		~dimensional_pos();
-		dimensional_pos& get_pos(std::vector<type> stream, type& t);
-		dimensional_pos& get_pos(std::vector<std::vector<type> > stream, type& t);
-		dimensional_pos& get_pos(std::vector<std::vector<std::vector<type> > > stream, type& t);
-		pos get_z();
-		pos get_y();
-		pos get_x();
+		template <typename type> dimensional_pos& get_pos(std::vector<type> stream, type& t);
+		template <typename type> dimensional_pos& get_pos(std::vector<std::vector<type> > stream, type& t);
+		template <typename type> dimensional_pos& get_pos(std::vector<std::vector<std::vector<type> > > stream, type& t);
+		pos get_z() const;
+		pos get_y() const;
+		pos get_x() const;
 	private:
 		pos absolute_x;
 		pos absolute_y;

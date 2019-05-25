@@ -2,7 +2,7 @@
 
 #include "matrix.h"
 
-namespace s_matrix {
+namespace s_mtx {
 	template<typename type, size_t _breadth, size_t _height, size_t _width>
 	matrix<type, _breadth, _height, _width>::matrix(size_t o_z, size_t o_y, size_t o_x)
 		: size_obj(o_z, o_y, o_x)
@@ -46,7 +46,7 @@ namespace s_matrix {
 	}
 
 	template<typename type, size_t _breadth, size_t _height, size_t _width>
-	void matrix<type, _breadth, _height, _width>::move(dimensional_pos<type> old_pos, dimensional_pos<type> new_pos) {
+	void matrix<type, _breadth, _height, _width>::move(dimensional_pos old_pos, dimensional_pos new_pos) {
 		type obj = dat[old_pos.get_z()][old_pos.get_y()][old_pos.get_x()];
 		(bool)dat[old_pos.get_z()][old_pos.get_y()][old_pos.get_x()];
 		dat[new_pos.get_z()][new_pos.get_y()][new_pos.get_x()] = obj;
@@ -70,8 +70,8 @@ namespace s_matrix {
 	}
 
 	template<typename type, size_t _breadth, size_t _height, size_t _width>
-	dimensional_pos<type> matrix<type, _breadth, _height, _width>::get_loc(type& t) {
-		dimensional_pos<type> internal;
+	dimensional_pos matrix<type, _breadth, _height, _width>::get_loc(type& t) {
+		dimensional_pos internal;
 		return internal.get_pos(dat, t);
 	}
 
@@ -138,7 +138,7 @@ namespace s_matrix {
 					if ((bool)dat[i][j][k] == true) {
 						type obj = dat[i][j][k];
 						(bool)dat[i][j][k] = false;
-						return obj;
+						t = obj;
 					}
 				}
 			}

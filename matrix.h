@@ -3,7 +3,7 @@
 #include <vector>
 #include "dimensional.h"
 #define _MATRIX_H_
-namespace s_matrix {
+namespace s_mtx {
 	using namespace s_dim;
 	template<typename type, size_t _breadth = 0, size_t _height = 0, size_t _width = 0>
 	class matrix {
@@ -13,11 +13,11 @@ namespace s_matrix {
 		void resize(size_t new_breadth = 0, size_t new_height = 0, size_t new_width = 0);
 		void assign(type obj, pos z, pos y, pos x);
 		type access(pos z = 0, pos y = 0, pos x = 0);
-		void move(dimensional_pos<type> old_pos, dimensional_pos<type> new_pos);
+		void move(dimensional_pos old_pos, dimensional_pos new_pos);
 		size_t get_capacity() const;
 		std::vector<std::vector<type> >& copy(std::vector<std::vector<type> > dest, pos z = 0, pos y = 0, pos dest_z = 0);
 		std::vector<type>& copy(std::vector<type> dest, pos z = 0, pos y = 0);
-		dimensional_pos<type> get_loc(type& t);
+		dimensional_pos get_loc(type& t);
 		bool isfull();
 		void fill(type obj);
 		void remove_instance(type obj);
@@ -31,4 +31,13 @@ namespace s_matrix {
 		dimensional_size<_breadth, _height, _width> size_obj;
 		std::vector<std::vector<std::vector<type> > > dat;
 	};
+
+	typedef matrix<int> mat_int;
+	typedef matrix<char> mat_chr;
+	typedef matrix<bool> mat_bln;
+	typedef matrix<float> mat_flt;
+	typedef matrix<double> mat_dbl;
+	typedef matrix<wchar_t> mat_wch;
+	typedef matrix<std::string> mat_str;
+	typedef matrix<std::wstring> mat_wsr;
 }
