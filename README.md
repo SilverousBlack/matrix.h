@@ -6,6 +6,22 @@ Visit `code/releases` for the latest release as well all other releases.
 
 ## Latest Release
 
+### 2.1 Features
+#### Type definitions
+* Added type definitions for common data types
+    - `mat_int` for `int`
+    - `mat_chr` for `char`
+    - `mat_bln` for `bool` or `boolean`
+    - `mat_flt` for `float`
+    - `mat_dbl` for `double`
+    - `mat_wch` for `wchar_t`
+    - `mat_str` for `std::string`
+    - `mat_wsr` for `std::wstring`
+#### Constants
+* Made some functionalities a constant
+#### ~BUG~
+* Fixed issue with downloading a previous version in the `.zip` file
+
 ### 2.0 Features
 #### ***BIG CHANGES***
 * Placed `dimensional_pos` and `dimensional_size` under `namespace` `s_dim`
