@@ -31,6 +31,7 @@ namespace s_dim {
 		template <typename type> dimensional_pos& get_pos(std::vector<type> stream, type& t);
 		template <typename type> dimensional_pos& get_pos(std::vector<std::vector<type> > stream, type& t);
 		template <typename type> dimensional_pos& get_pos(std::vector<std::vector<std::vector<type> > > stream, type& t);
+		bool operator== (dimensional_pos comp);
 		pos get_z() const;
 		pos get_y() const;
 		pos get_x() const;

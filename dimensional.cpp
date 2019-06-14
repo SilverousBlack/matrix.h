@@ -105,6 +105,11 @@ namespace s_dim {
 		}
 	}
 
+	bool dimensional_pos::operator==(dimensional_pos comp){
+		if (absolute_z == comp.get_z() && absolute_y == comp.get_y()&& absolute_x == comp.get_x()) return true;
+		else return false;
+	}
+
 	pos dimensional_pos::get_z() const{
 		return absolute_z;
 	}

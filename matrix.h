@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <fstream>
 #include <vector>
 #include "dimensional.h"
 #define _MATRIX_H_
@@ -15,6 +16,9 @@ namespace s_mtx {
 		type access(pos z = 0, pos y = 0, pos x = 0);
 		void move(dimensional_pos old_pos, dimensional_pos new_pos);
 		size_t get_capacity() const;
+		size_t get_breadth() const;
+		size_t get_height() const;
+		size_t get_width() const;
 		std::vector<std::vector<type> >& copy(std::vector<std::vector<type> > dest, pos z = 0, pos y = 0, pos dest_z = 0);
 		std::vector<type>& copy(std::vector<type> dest, pos z = 0, pos y = 0);
 		dimensional_pos get_loc(type& t);
@@ -27,6 +31,7 @@ namespace s_mtx {
 		operator int() const;
 		operator bool() const;
 		operator size_t() const;
+		dimensional_size<_breadth, _height, _width> metadata();
 	private:
 		dimensional_size<_breadth, _height, _width> size_obj;
 		std::vector<std::vector<std::vector<type> > > dat;
@@ -40,4 +45,38 @@ namespace s_mtx {
 	typedef matrix<wchar_t> mat_wch;
 	typedef matrix<std::string> mat_str;
 	typedef matrix<std::wstring> mat_wsr;
+
+	enum mtxio {
+		/*
+		Output Matrix I/O modes
+		*/
+		std, cpy, safe,
+
+		/*
+		Input Matrix I/O modes
+		*/
+		sta, cta, bbta, rsta, rcta
+		/* 
+		sta = standard type allocation
+		cta = convetional type allocation
+		bbta = boolean-based type allocation
+		rsta = random standard type allocation
+		rcta = random conventional type allocation
+		*/
+	};
+
+	template<typename type>
+	void make_file(matrix<type> src, std::string filename, mtxio mode = std);
+	template<typename type>
+	void read_file(matrix<type> dest, std::string filename);
+	std::string marker(dimensional_pos obj);
+	template<typename type>
+	std::string metadata(matrix<type> obj);
+	dimensional_size<> read_metadata(std::string metadata);
+	dimensional_pos read_marker(std::string marker);
+	std::string identity_type(std::string type_metadata);
+	template<typename type>
+	void read_content(type obj, std::string content);
+	template<typename type>
+	void mtx_init(matrix<type> mtx, mtxio mode);
 }
