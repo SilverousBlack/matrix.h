@@ -6,6 +6,27 @@ Visit `code/releases` for the latest release as well all other releases.
 
 ## Latest Release
 
+### 3.0 ***BETA*** Features
+#### New I/O
+* Added a file I/O system
+    - Allows file generation `make_file`
+    - Allows file reading `read_file`
+* Added an initialization system
+    - Still a huge prototype function
+    - Places an integral value to all the members of the matrix space
+* Added an enumeration `mtxio` for I/O mode control
+    - Output modes
+        * `std` - a mode for sole generation of an Matrix file (*.mtx)
+        * `cpy` - a mode for combined generation of a Matrix file (*.mtx) and a readable file
+        * `safe` - a mode for combined generation of a Matrix file in a binary mode and a readable file in normal mode
+    - Input modes
+        * `sta` (standard type allocation) - a mode for standard class initialization;
+        * `cta` (convetional type allocation) - a mode for conventional class initialization;
+        * `bbta` (boolean-based type allocation) - a mode for comparison-based class split initialization;
+        * ++more
+#### Beta Notes
+* The new prototype functions are purely in testing phase there is no guarantee they would work.
+
 ### 2.1 Features
 #### Type definitions
 * Added type definitions for common data types
