@@ -1,0 +1,6 @@
+----- ----- ----- ----- -----
+"Matrix.h" is a utility library project used in large-scale (three-dimensional) memory usage.
+"Matrix.h" is developed by Silverous Black, released in May 19, 2019 in GitHub.
+    Visit the project on GitHub here: https://github.com/SilverousBlack/matrix.h
+The use of this utility library is subjected to the terms expressed LICENSE.txt (commit: b460187) or Creative Commons Attribution 4.0 Internatinal.
+----- ----- ----- ----- -----
