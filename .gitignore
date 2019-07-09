@@ -10,7 +10,8 @@
 *.slo
 *.lo
 *.o
-*.obj
+!*.obj
+# .obj must be included in the ignored watch list, but excepted for now
 
 # Precompiled Headers
 *.gch
@@ -29,7 +30,8 @@
 *.lai
 *.la
 *.a
-*.lib
+!*.lib
+# .lib must be included in the ignored watch list, but excepted for now
 
 # Executables
 *.exe
