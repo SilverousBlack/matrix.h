@@ -24,12 +24,12 @@ namespace s_dim {
 		template<typename type> double average_z(type*** tri_arr);
 		template<typename type> double average_y(type*** tri_arr);
 		template<typename type> double average_x(type*** tri_arr);
-		bool operator> (dimensional_space target);
-		bool operator>= (dimensional_space target);
-		bool operator< (dimensional_space target);
-		bool operator<= (dimensional_space target);
-		bool operator== (dimensional_space target);
-		dimensional_space operator= (dimensional_space src);
+		bool operator> (dimensional_space& target);
+		bool operator>= (dimensional_space& target);
+		bool operator< (dimensional_space& target);
+		bool operator<= (dimensional_space& target);
+		bool operator== (dimensional_space& target);
+		dimensional_space operator= (dimensional_space& src);
 		dimensional_space operator= (size_t src[3]);
 		template<typename type> dimensional_space operator= (type*** tri_arr_src);
 	};
